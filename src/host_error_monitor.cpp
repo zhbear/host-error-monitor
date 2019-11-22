@@ -435,7 +435,8 @@ static bool checkIERRCPUs()
     {
         uint8_t cc = 0;
         CPUModel model{};
-        if (peci_GetCPUID(addr, &model, &cc) != PECI_CC_SUCCESS)
+        uint8_t stepping = 0;
+        if (peci_GetCPUID(addr, &model, &stepping, &cc) != PECI_CC_SUCCESS)
         {
             std::cerr << "Cannot get CPUID!\n";
             continue;
@@ -997,7 +998,8 @@ static std::bitset<MAX_CPUS> checkERRPinCPUs(const int errPin)
         {
             uint8_t cc = 0;
             CPUModel model{};
-            if (peci_GetCPUID(addr, &model, &cc) != PECI_CC_SUCCESS)
+            uint8_t stepping = 0;
+            if (peci_GetCPUID(addr, &model, &stepping, &cc) != PECI_CC_SUCCESS)
             {
                 std::cerr << "Cannot get CPUID!\n";
                 continue;
