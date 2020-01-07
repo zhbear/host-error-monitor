@@ -30,10 +30,10 @@ static std::shared_ptr<sdbusplus::asio::connection> conn;
 
 static bool hostOff = true;
 
-const static constexpr int caterrTimeoutMs = 2000;
-const static constexpr int errTimeoutMs = 90000;
-const static constexpr int smiTimeoutMs = 90000;
-const static constexpr int crashdumpTimeoutS = 300;
+const static constexpr size_t caterrTimeoutMs = 2000;
+const static constexpr size_t errTimeoutMs = 90000;
+const static constexpr size_t smiTimeoutMs = 90000;
+const static constexpr size_t crashdumpTimeoutS = 300;
 
 // Timers
 // Timer for CATERR asserted
